@@ -1,0 +1,47 @@
+/* Реферат в общей теме персонального сайта. */
+#headertext { min-width: 0; }
+#maintext.abstract-page { overflow-wrap: anywhere; }
+.abstract-page a { text-decoration: underline; text-underline-offset: 3px; }
+.abstract-page a:hover { text-decoration-thickness: 2px; }
+.abstract-page .abstract-subtitle { text-align: center; text-indent: 0; }
+.abstract-page .abstract-keywords { text-indent: 0; text-align: left; color: var(--text-muted); }
+.abstract-page .abstract-toc { margin: 26px 15px 32px; padding: 18px 24px; border-block: 1px solid var(--border); }
+.abstract-page .abstract-toc ol { padding-left: 24px; margin-top: 8px; }
+.abstract-page .abstract-toc li { padding: 3px 0; }
+.abstract-page [id] { scroll-margin-top: 24px; }
+.abstract-page .research-tasks { margin: 12px 15px; padding-left: 30px; }
+.abstract-page .research-tasks li { margin-bottom: 8px; }
+.abstract-page figure { margin: 26px 15px; }
+.abstract-page .pipeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0; list-style: none; }
+.abstract-page .pipeline li { padding: 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-muted); line-height: 1.5; }
+.abstract-page .pipeline li strong { display: block; margin-bottom: 4px; }
+.abstract-page figcaption { margin-top: 12px; text-align: center; font-size: 16px; line-height: 1.5; }
+.abstract-page .table-scroll { margin: 20px 15px; overflow-x: auto; }
+.abstract-page table { width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.6; }
+.abstract-page caption { margin-bottom: 12px; text-align: left; font-weight: bold; }
+.abstract-page th, .abstract-page td { padding: 12px 14px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+.abstract-page th { background: var(--surface-muted); }
+.abstract-page pre { margin: 20px 15px; padding: 18px; overflow-x: auto; border: 1px solid var(--border); background: var(--surface-muted); font-size: 15px; line-height: 1.6; }
+.abstract-page .bibliography { margin: 18px 15px; padding-left: 30px; }
+.abstract-page .bibliography li { margin-bottom: 15px; padding-left: 4px; line-height: 1.65; }
+.abstract-page .bibliography a { font: inherit; }
+.abstract-page .source-note { color: var(--text-muted); font-size: 16px; text-align: left; text-indent: 0; }
+.abstract-page .back-to-top { text-align: right; text-indent: 0; }
+@media (max-width: 700px) {
+    #header h1 { overflow-wrap: anywhere; }
+    #maintext.abstract-page h2, #maintext.abstract-page h3 { margin-inline: 0; text-indent: 0; }
+    .abstract-page p, .abstract-page figure, .abstract-page pre, .abstract-page .table-scroll { margin-inline: 0; }
+    .abstract-page p { text-align: left; text-indent: 0; }
+    .abstract-page .abstract-toc { margin-inline: 0; padding-inline: 0; }
+    .abstract-page .bibliography { margin-inline: 0; padding-left: 26px; }
+    .abstract-page .pipeline { grid-template-columns: 1fr; }
+    .abstract-page th, .abstract-page td { padding: 9px; min-width: 150px; }
+    #menub .mitemb { margin-block: 6px; }
+}
+@media print {
+    #topblock, #menu, #menub, .abstract-toc, .back-to-top { display: none; }
+    #header, #maintext.abstract-page { border: 0; box-shadow: none; margin: 0; }
+    .abstract-page h2, .abstract-page h3 { break-after: avoid; }
+    .abstract-page .bibliography li { break-inside: avoid; }
+    .abstract-page a { color: #000; }
+}

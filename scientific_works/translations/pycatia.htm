@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Документация pycatia: установка и начало работы">
+    <title>Документация pycatia: установка и начало работы — перевод Руднева К. К.</title>
+    <link rel="icon" href="../../images/master.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="../../css/master_style.css">
+    <link rel="stylesheet" href="../../css/scientific_works.css">
+    <link rel="stylesheet" href="../../css/translations.css">
+    <meta name="author" content="Руднев Константин Константинович — перевод">
+</head>
+<body id="top">
+    <div id="topblock">
+        <div id="donntu">
+            <a href="http://donntu.ru" target="_blank" rel="noopener noreferrer">ДонНТУ</a>
+            <a href="http://masters.donntu.ru" target="_blank" rel="noopener noreferrer" title="Перейти на портал магистров ДонНТУ">Портал магистров</a>
+        </div>
+    </div>
+
+    <div id="header">
+        <div id="photomag">
+            <a href="../../rudnev_big.jpg"><img src="../../photo.jpg" width="180" height="240" alt="Магистр ДонНТУ Руднев Константин Константинович"></a>
+        </div>
+        <div id="headertext">
+            <h1 class="hdr">Руднев Константин Константинович</h1>
+            <h3 class="hdr"><a href="http://fisp.iknt.donntu.ru/">Факультет интеллектуальных систем и технологий</a></h3>
+            <h3 class="hdr"><a href="http://kpi.fisp.donntu.ru/">Кафедра программной инженерии</a></h3>
+            <h3 class="hdr">Специальность &laquo;Программная инженерия&raquo;</h3>
+            <h2 class="hdr">Тема магистерской диссертации &laquo;Исследование применения современных нейронных сетей для повышения эффективности систем автоматизированного проектирования&raquo;</h2>
+            <h3 class="hdr">Научный руководитель: к.т.н., доцент Григорьев Александр Владимирович</h3>
+        </div>
+    </div>
+
+    <div id="middleblock">
+        <nav id="menu" aria-label="Основная навигация">
+            <a class="button color" href="../../index.htm">О себе</a>
+            <a class="button color" href="../../diss/index.htm">Реферат</a>
+            <a class="button color" href="../index.htm">Научные труды</a>
+            <a class="button color" href="../../ind/index.htm">Индивидуальный раздел</a>
+        </nav>
+
+        <main id="maintext" class="translation-page">
+            <p class="breadcrumbs"><a href="../index.htm">Научные труды</a> / <a href="../index.htm#translations">Мои переводы</a></p>
+            <h1>Документация pycatia: установка и начало работы</h1>
+            <p class="translation-original" lang="en">pycatia Documentation: Installation; Getting Started</p>
+            <div class="translation-meta">
+                <p><strong>Авторы оригинала:</strong> <span lang="en">Paul Bourne</span></p>
+                <p><strong>Перевод с английского:</strong> Руднев Константин Константинович.</p>
+                <p><strong>Источник:</strong> Документация pycatia 0.10.1. Страницы Installation и Getting Started, состояние на 2 ноября 2026 года.</p>
+                <p><strong>Дата перевода:</strong> <time datetime="2026-11-02">2 ноября 2026 года</time>.</p>
+                <p><strong>Лицензия оригинала и условия распространения перевода:</strong> <a href="https://github.com/evereux/pycatia/blob/master/LICENSE.txt" rel="license noopener noreferrer" target="_blank">MIT</a>. Изменения: перевод на русский язык и указанное ниже сокращение.</p>
+            </div>
+            <p class="translation-note"><strong>Объём перевода.</strong> Перевод двух выбранных страниц документации: Installation и Getting Started. Остальные разделы документации не входят в перевод. Код, имена API и команды сохранены; комментарии к примерам переведены. Скриншот и пример служебного баннера интерпретатора опущены. Нумерация разделов адаптирована для этой страницы. Утверждения от первого лица и результаты экспериментов относятся к авторам оригинала.</p>
+            <nav class="source-links" aria-label="Первоисточники"><a href="https://pycatia.readthedocs.io/en/latest/installation.html" target="_blank" rel="noopener noreferrer" lang="en">Оригинал на английском</a><a href="https://pycatia.readthedocs.io/en/latest/introduction.html" target="_blank" rel="noopener noreferrer" lang="en">Getting Started — оригинал</a><a href="../../diss/index.htm#ref-23">Источник [23] в реферате</a></nav>
+            <nav class="translation-contents" aria-label="Содержание перевода"><strong>Содержание</strong><ol><li><a href="#installation">1. Установка</a></li><li><a href="#getting-started">2. Начало работы</a></li><li><a href="#license">3. Уведомление об авторских правах и лицензии</a></li></ol></nav>
+            <article aria-label="Текст перевода">
+<h2 id="installation">1. Установка</h2>
+<p>При разработке Python-скриптов с использованием pycatia рекомендуется выполнить описанные ниже действия. Готовые сборки доступны на <a href="https://github.com/evereux/pycatia/releases" target="_blank" rel="noopener noreferrer">странице выпусков проекта</a>.</p>
+<h3>Краткий вариант</h3>
+<p>Предполагается, что Python 3.9 или более поздняя версия уже установлен и вы знаете, как и когда пользоваться виртуальными окружениями. На практике их следует использовать постоянно.</p>
+<p>Можно установить pycatia из PyPI с помощью pip либо клонировать репозиторий GitHub. Не применяйте оба способа в одной структуре каталогов.</p>
+<p>Установка из PyPI:</p>
+<pre><code>pip install pycatia</code></pre>
+<p>Обновление установленной версии:</p>
+<pre><code>pip install pycatia --upgrade</code></pre>
+<p>Получение актуальной версии ветки master из GitHub:</p>
+<pre><code>git clone https://github.com/evereux/pycatia.git
+# Перейдите в каталог клонированного проекта.
+cd pycatia
+# Создайте виртуальное окружение Python.
+python -m virtualenv env
+# Активируйте виртуальное окружение.
+env\Scripts\activate
+# Установите зависимости pycatia.
+pip install -r requirements\requirements.txt</code></pre>
+<h3>Подробный вариант</h3>
+<p>У конечного пользователя pycatia может не быть прав администратора на рабочем компьютере. В этом случае для установки Python и модуля virtualenv потребуется помощь человека с соответствующими правами.</p>
+<p>Загрузите Python 3 версии 3.9 или новее с <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">python.org</a> и установите его. При установке обязательно включите добавление Python в переменные окружения.</p>
+<p>Установите virtualenv из командной строки, запущенной от имени администратора:</p>
+<pre><code>python -m pip install virtualenv</code></pre>
+<h3>Создание виртуального окружения</h3>
+<p>Виртуальное окружение позволяет устанавливать пакеты Python изолированно от основной установки Python. Создайте каталог для скриптов pycatia, например <code>c:\Users\&lt;username&gt;\python\pycatia-scripts</code>, и перейдите в него:</p>
+<pre><code>cd c:\Users\&lt;username&gt;\python\pycatia-scripts</code></pre>
+<p>Создайте и активируйте окружение:</p>
+<pre><code>python -m virtualenv env
+env\Scripts\activate</code></pre>
+<p>После активации приглашение командной строки должно выглядеть примерно так:</p>
+<pre><code>(env) c:\Users\&lt;username&gt;\python\pycatia-scripts&gt;</code></pre>
+<p>Установите pycatia:</p>
+<pre><code>python -m pip install pycatia</code></pre>
+<p>Установка завершена. Перед запуском скриптов pycatia необходимо активировать это виртуальное окружение.</p>
+<h3>Проверка установки</h3>
+<p>Важно сначала запустить сеанс CATIA V5. Затем откройте командную строку CMD и активируйте виртуальное окружение, если оно ещё не активно. Введите <code>python</code>, чтобы перейти в интерактивный интерпретатор.</p>
+<p>Импортируйте объект приложения CATIA:</p>
+<pre><code>from pycatia import catia
+application = catia()
+help(application)
+# Нажмите q, чтобы выйти из справки.
+# Откройте новый CATPart.
+documents = application.documents
+documents.add('Part')</code></pre>
+<p>Для выхода из интерпретатора:</p>
+<pre><code>exit()</code></pre>
+<p>Если сообщений об ошибках нет, но новый CATPart не появился, проверьте в диспетчере задач, не работают ли скрытые процессы CATIA или CNEXT. Иногда при установке CATIA V5 COM-объект регистрируется некорректно. Если приведённый пример не работает, может потребоваться переустановка CATIA V5 или регистрация её COM-сервера.</p>
+<h3>Регистрация COM-сервера CATIA V5</h3>
+<p>Обычно регистрация выполняется автоматически при установке CATIA V5, но иногда этот этап завершается неудачно. Из командной строки перейдите в каталог, содержащий <code>cnext.exe</code> той установки CATIA V5, которую требуется зарегистрировать. Например:</p>
+<pre><code>cd &lt;drive&gt;\&lt;CATIA_DIR&gt;\&lt;CATIA_VERSION&gt;\code\bin</code></pre>
+<p>Замените <code>&lt;env_file&gt;</code> и <code>&lt;path_to_env_file&gt;</code> соответствующими значениями и выполните:</p>
+<pre><code>cnext.exe /regserver -env &lt;env_file&gt; -direnv &lt;path_to_env_file&gt;</code></pre>
+<p>После этого можно перейти к началу работы с pycatia.</p>
+
+<h2 id="getting-started">2. Начало работы</h2>
+<p>Прежде чем продолжить знакомство с pycatia, установите библиотеку. Перед выполнением вводных примеров на этой странице необходимо запустить CATIA V5 и открыть командную строку CMD. Окружение, в котором установлена pycatia, должно быть активировано до запуска интерпретатора Python.</p>
+<h3>Открытие нового CATPart</h3>
+<p>Почти всегда требуется импортировать объект приложения <code>catia</code> или <code>CATIADocHandler</code>.</p>
+<pre><code>from pycatia import catia
+from pycatia.mec_mod_interfaces.part_document import PartDocument
+
+# Инициализируйте приложение автоматизации CATIA.
+# CATIA V5 уже должна быть запущена.
+application = catia()
+documents = application.documents</code></pre>
+<p><code>documents</code> — экземпляр класса <code>Documents</code>.</p>
+<pre><code>part_document: PartDocument = documents.add('Part')</code></pre>
+<p>Метод <code>add</code> коллекции <code>Documents</code> принимает строку <code>'Part'</code>, <code>'Product'</code> или <code>'Drawing'</code>. Вызов <code>documents.add('Part')</code> добавляет новый CATPart в коллекцию документов и возвращает объект документа — в данном случае <code>PartDocument</code>.</p>
+<p>Объект документа имеет ряд доступных свойств:</p>
+<pre><code>part_document.name
+# Возвращает имя нового документа.
+part_document.path
+# Возвращает объект pathlib.Path для документа.</code></pre>
+<h3>Создание геометрического набора</h3>
+<p>Геометрический набор создаётся с помощью коллекции <code>HybridBodies</code>. Ваша конфигурация CATIA может автоматически создавать такой набор в новом CATPart; тем не менее в этом примере мы создадим ещё один.</p>
+<pre><code>part = part_document.part
+hybrid_bodies = part.hybrid_bodies
+new_set = hybrid_bodies.add()
+new_set.name
+# Возвращает имя нового набора.
+# Чтобы переименовать набор:
+new_set.name = 'Construction Geometry'</code></pre>
+<p>О запуске скриптов см. <a href="https://pycatia.readthedocs.io/en/latest/create_and_run_a_script.html" target="_blank" rel="noopener noreferrer" lang="en">Create And Run A Script</a>. Более подробные примеры взаимодействия с pycatia приведены в разделе <a href="https://pycatia.readthedocs.io/en/latest/examples.html" target="_blank" rel="noopener noreferrer" lang="en">Examples</a>, содержащем скрипты для выполнения в терминале.</p>
+<p><strong>Примечание оригинала.</strong> <code>CATIADocHandler</code> предназначен для случаев последовательного открытия и закрытия нескольких документов. Примеры его использования приведены в разделе Examples.</p>
+
+<h2 id="license">3. Уведомление об авторских правах и лицензии</h2>
+<p>Автор оригинальной документации — Paul Bourne. Ниже сохранено уведомление MIT, распространяющееся на программное обеспечение и связанные файлы документации.</p>
+<details><summary>Исходное уведомление MIT License</summary><pre class="license-text" lang="en"><code>MIT License
+
+Copyright (c) 2018 Paul Bourne
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre></details>
+
+            </article>
+
+        </main>
+    </div>
+    <nav id="menub" aria-label="Навигация внизу страницы">
+        <a class="mitemb" href="../../index.htm">О себе</a>
+        <a class="mitemb" href="../../diss/index.htm">Реферат</a>
+        <a class="mitemb" href="../index.htm#translations">Мои переводы</a>
+        <a class="mitemb" href="../../ind/index.htm">Индивидуальный раздел</a>
+    </nav>
+</body>
+</html>

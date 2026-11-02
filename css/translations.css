@@ -1,0 +1,46 @@
+/* Страницы переводов используют общую тему персонального сайта. */
+#maintext.translation-page { overflow-wrap: anywhere; }
+.translation-page .breadcrumbs, .translation-page .translation-meta,
+.translation-page .translation-note, .translation-page .source-links,
+.translation-page .translation-pager { margin: 16px 15px; text-indent: 0; text-align: left; }
+.translation-page .breadcrumbs { font-size: 16px; color: var(--text-muted); }
+.translation-page .translation-original { margin: 0 15px 20px; font-size: 20px; text-indent: 0; text-align: left; }
+.translation-page .translation-meta { padding: 16px 20px; background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; }
+.translation-page .translation-meta p { margin: 4px 0; text-indent: 0; text-align: left; }
+.translation-page .translation-note { padding-left: 16px; border-left: 3px solid var(--border-strong); font-size: 16px; line-height: 1.6; }
+.translation-page .source-links, .translation-page .translation-pager { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.translation-page .translation-pager { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); }
+.translation-page .translation-contents { margin: 24px 15px; padding: 16px 24px; background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; }
+.translation-page .translation-contents ol { margin: 8px 0 0; padding-left: 24px; }
+.translation-page .translation-contents li { margin: 5px 0; }
+.translation-page a { text-decoration: underline; text-underline-offset: 3px; }
+.translation-page h2[id], .translation-page h3[id] { scroll-margin-top: 24px; }
+.translation-page article p { line-height: 1.8; }
+.translation-page article li { line-height: 1.7; }
+.translation-page .formula { margin: 20px 15px; padding: 12px 16px; background: var(--surface-muted); font-family: Georgia, serif; text-align: left; text-indent: 0; overflow-wrap: anywhere; }
+.translation-page pre { margin: 20px 15px; padding: 16px; max-width: 100%; overflow-x: auto; background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; font-size: 15px; line-height: 1.6; white-space: pre; }
+.translation-page code { font-family: Consolas, monospace; }
+.translation-page .table-scroll { margin: 20px 15px; max-width: 100%; overflow-x: auto; }
+.translation-page table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.translation-page caption { padding: 0 0 12px; text-align: left; line-height: 1.6; }
+.translation-page th, .translation-page td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+.translation-page th { background: var(--surface-muted); }
+.translation-page .license-text { white-space: pre-wrap; font-size: 12px; }
+.translation-page details { margin: 20px 15px; }
+.translation-page summary { cursor: pointer; }
+@media (max-width: 700px) {
+    .translation-page .breadcrumbs, .translation-page .translation-meta,
+    .translation-page .translation-note, .translation-page .source-links,
+    .translation-page .translation-pager, .translation-page .translation-original,
+    .translation-page .translation-contents, .translation-page .formula,
+    .translation-page pre, .translation-page .table-scroll, .translation-page details { margin-left: 0; margin-right: 0; }
+    .translation-page .translation-meta, .translation-page .translation-contents { padding: 14px; }
+    #maintext.translation-page h2, #maintext.translation-page h3 { margin-left: 0; margin-right: 0; text-indent: 0; }
+}
+@media print {
+    #topblock, #menu, #menub, .breadcrumbs, .translation-contents, .translation-pager { display: none; }
+    #maintext.translation-page { border: 0; box-shadow: none; padding: 0; }
+    .translation-page pre { white-space: pre-wrap; }
+    .translation-page .table-scroll { overflow: visible; }
+    .translation-page tr { break-inside: avoid; }
+}

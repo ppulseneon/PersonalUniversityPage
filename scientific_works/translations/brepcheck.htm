@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BRepCheck_Analyzer: справочник класса проверки корректности геометрии">
+    <title>BRepCheck_Analyzer: справочник класса проверки корректности геометрии — перевод Руднева К. К.</title>
+    <link rel="icon" href="../../images/master.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="../../css/master_style.css">
+    <link rel="stylesheet" href="../../css/scientific_works.css">
+    <link rel="stylesheet" href="../../css/translations.css">
+    <meta name="author" content="Руднев Константин Константинович — перевод">
+</head>
+<body id="top">
+    <div id="topblock">
+        <div id="donntu">
+            <a href="http://donntu.ru" target="_blank" rel="noopener noreferrer">ДонНТУ</a>
+            <a href="http://masters.donntu.ru" target="_blank" rel="noopener noreferrer" title="Перейти на портал магистров ДонНТУ">Портал магистров</a>
+        </div>
+    </div>
+
+    <div id="header">
+        <div id="photomag">
+            <a href="../../rudnev_big.jpg"><img src="../../photo.jpg" width="180" height="240" alt="Магистр ДонНТУ Руднев Константин Константинович"></a>
+        </div>
+        <div id="headertext">
+            <h1 class="hdr">Руднев Константин Константинович</h1>
+            <h3 class="hdr"><a href="http://fisp.iknt.donntu.ru/">Факультет интеллектуальных систем и технологий</a></h3>
+            <h3 class="hdr"><a href="http://kpi.fisp.donntu.ru/">Кафедра программной инженерии</a></h3>
+            <h3 class="hdr">Специальность &laquo;Программная инженерия&raquo;</h3>
+            <h2 class="hdr">Тема магистерской диссертации &laquo;Исследование применения современных нейронных сетей для повышения эффективности систем автоматизированного проектирования&raquo;</h2>
+            <h3 class="hdr">Научный руководитель: к.т.н., доцент Григорьев Александр Владимирович</h3>
+        </div>
+    </div>
+
+    <div id="middleblock">
+        <nav id="menu" aria-label="Основная навигация">
+            <a class="button color" href="../../index.htm">О себе</a>
+            <a class="button color" href="../../diss/index.htm">Реферат</a>
+            <a class="button color" href="../index.htm">Научные труды</a>
+            <a class="button color" href="../../ind/index.htm">Индивидуальный раздел</a>
+        </nav>
+
+        <main id="maintext" class="translation-page">
+            <p class="breadcrumbs"><a href="../index.htm">Научные труды</a> / <a href="../index.htm#translations">Мои переводы</a></p>
+            <h1>BRepCheck_Analyzer: справочник класса проверки корректности геометрии</h1>
+            <p class="translation-original" lang="en">BRepCheck_Analyzer Class Reference</p>
+            <div class="translation-meta">
+                <p><strong>Авторы оригинала:</strong> <span lang="en">Open CASCADE Technology</span></p>
+                <p><strong>Перевод с английского:</strong> Руднев Константин Константинович.</p>
+                <p><strong>Источник:</strong> Справочник Open CASCADE Technology 8.0.1. Состояние на 2 ноября 2026 года.</p>
+                <p><strong>Дата перевода:</strong> <time datetime="2026-11-02">2 ноября 2026 года</time>.</p>
+                <p><strong>Лицензия оригинала и условия распространения перевода:</strong> <a href="https://occt3d.com/dev/doc/overview/html/occt_public_license.html" rel="license noopener noreferrer" target="_blank">LGPL 2.1 с дополнительным исключением OCCT</a>. Изменения: перевод на русский язык и указанное ниже сокращение.</p>
+            </div>
+            <p class="translation-note"><strong>Объём перевода.</strong> Перевод содержательной части страницы справочника класса: описание, конструктор, методы и критерии корректности. Повторяющиеся краткие описания сведены с подробными; навигация сайта и автоматически сформированные повторы сигнатур не воспроизводятся. Имена типов и методов сохранены. Нумерация разделов адаптирована для этой страницы. Утверждения от первого лица и результаты экспериментов относятся к авторам оригинала.</p>
+            <nav class="source-links" aria-label="Первоисточники"><a href="https://occt3d.com/dev/doc/refman/html/class_b_rep_check___analyzer.html" target="_blank" rel="noopener noreferrer" lang="en">Оригинал на английском</a><a href="../../diss/index.htm#ref-26">Источник [26] в реферате</a></nav>
+            <nav class="translation-contents" aria-label="Содержание перевода"><strong>Содержание</strong><ol><li><a href="#description">1. Описание класса</a></li><li><a href="#constructor">2. Конструктор и инициализация</a></li><li><a href="#validity">3. Проверка корректности</a></li><li><a href="#settings">4. Выбор метода и параллельный режим</a></li><li><a href="#result">5. Результат проверки и исходный файл</a></li></ol></nav>
+            <article aria-label="Текст перевода">
+<h2 id="description">1. Описание класса</h2>
+<p><code>BRepCheck_Analyzer</code> — средство проверки общей корректности геометрической формы. Чтобы форма считалась корректной в Open CASCADE, она и составляющие её подформы должны удовлетворять определённым критериям. Их проверяет функция <code>IsValid</code>. После определения корректности можно диагностировать отдельные аномалии и исправить их средствами пакетов <code>ShapeAnalysis</code>, <code>ShapeUpgrade</code> и <code>ShapeFix</code>.</p>
+<p>Заголовочный файл:</p>
+<pre><code>#include &lt;BRepCheck_Analyzer.hxx&gt;</code></pre>
+
+<h2 id="constructor">2. Конструктор и инициализация</h2>
+<h3>Конструктор BRepCheck_Analyzer</h3>
+<pre><code>BRepCheck_Analyzer(
+    const TopoDS_Shape&amp; S,
+    const bool GeomControls = true,
+    const bool theIsParallel = false,
+    const bool theIsExact = false
+)</code></pre>
+<p>Создаёт объект проверки формы <code>S</code>. Если <code>GeomControls</code> равно <code>false</code>, проверяется только топологическая информация. Геометрические проверки включают:</p>
+<ul>
+<li>для вершины — <code>BRepCheck_InvalidToleranceValue</code>, ещё не реализовано (NYI);</li>
+<li>для ребра — <code>BRepCheck_InvalidCurveOnClosedSurface</code>, <code>BRepCheck_InvalidCurveOnSurface</code>, <code>BRepCheck_InvalidSameParameterFlag</code>, а также <code>BRepCheck_InvalidToleranceValue</code>, ещё не реализовано;</li>
+<li>для грани — <code>BRepCheck_UnorientableShape</code>, <code>BRepCheck_IntersectingWires</code>, а также <code>BRepCheck_InvalidToleranceValue</code>, ещё не реализовано;</li>
+<li>для контура — <code>BRepCheck_SelfIntersectingWire</code>.</li>
+</ul>
+<h3>Init</h3>
+<pre><code>void Init(
+    const TopoDS_Shape&amp; S,
+    const bool GeomControls = true
+)</code></pre>
+<p><code>S</code> — проверяемая форма. При <code>GeomControls = false</code> проверяется только топология. В описании <code>Init</code> оригинал перечисляет те же категории геометрических проверок: для вершины — некорректный допуск (NYI); для ребра — некорректные кривые на поверхности и замкнутой поверхности, некорректный флаг SameParameter и допуск (NYI); для грани — невозможность согласованной ориентации, пересечение контуров и некорректный допуск (NYI); для контура — самопересечение. Для ошибок допуска в этом описании используется написание <code>BRepCheck_InvalidTolerance</code>.</p>
+
+<h2 id="validity">3. Проверка корректности</h2>
+<h3>IsValid без аргументов</h3>
+<pre><code>bool IsValid() const</code></pre>
+<p>Возвращает <code>true</code>, если в форме <code>S</code> и её подформах не обнаружены дефекты. Проверяется корректность топологии и, в частности, параметризации рёбер.</p>
+<p>Для корректности топологии должны выполняться следующие условия:</p>
+<ul>
+<li>Если ребро не является вырожденным, у него должно быть не менее двух вершин. Вершины должны лежать в пределах ограничивающих рёбер с учётом допуска, заданного в вершине.</li>
+<li>Рёбра должны принадлежать хотя бы одной грани. Их представления должны удовлетворять назначенному им допуску.</li>
+<li>Контуры, определяющие грань, должны быть замкнутыми и не должны самопересекаться.</li>
+<li>Внутри грани должен существовать один контур, охватывающий все остальные.</li>
+<li>Ориентация контуров должна быть согласована с каждым из рёбер.</li>
+<li>Грани должны быть правильно ориентированы, в частности относительно соседних граней, если они задают твёрдое тело.</li>
+<li>Оболочки, ограничивающие твёрдое тело, должны быть замкнутыми. Для твёрдого тела должна существовать одна внешняя охватывающая оболочка.</li>
+</ul>
+<p>Параметризация ребра проверяется одним из двух способов в зависимости от контекста. Если ребро является отдельным объектом либо рассматривается в составе контура или составного объекта, его параметризация определяется трёхмерной кривой и считается корректной.</p>
+<p>Если ребро рассматривается в контексте грани, флаги <code>SameParameter</code> и <code>SameRange</code> должны иметь значение <code>true</code>. Для их проверки используются функции <code>BRep_Tool::SameParameter</code> и <code>BRep_Tool::SameRange</code>. Если хотя бы один флаг равен <code>false</code>, ребро признаётся некорректным без дополнительных проверок.</p>
+<p>Когда оба флага установлены, <code>IsValid</code> проверяет, согласовано ли представление ребра на поверхности грани с трёхмерной параметризацией в пределах допуска ребра. Пусть <var>C</var> — трёхмерная кривая, <var>P</var> — параметрическая кривая PCurve на базовой поверхности <var>S</var>, а <var>t</var> — параметр. Проверяется условие:</p>
+<p class="formula" aria-label="Условие геометрической согласованности">|C(t) − S(P(t))| ≤ tolerance,</p>
+<p>где <code>tolerance</code> — допуск, сохранённый в ребре.</p>
+<h3>IsValid для подформы</h3>
+<pre><code>bool IsValid(const TopoDS_Shape&amp; S) const</code></pre>
+<p>Здесь <code>S</code> — подформа исходной формы. Метод возвращает истинное значение, если в ней и во всех её подформах не обнаружены дефекты.</p>
+
+<h2 id="settings">4. Выбор метода и параллельный режим</h2>
+<h3>SetExactMethod</h3>
+<pre><code>void SetExactMethod(const bool theIsExact)</code></pre>
+<p>Задаёт способ вычисления расстояния. При <code>theIsExact = false</code> расстояние вычисляется в конечном числе точек: это быстрее, но результат может оказаться некорректным. При <code>theIsExact = true</code> применяется более медленный, но более точный метод на основе класса <code>BRepLib_CheckCurveOnSurface</code>.</p>
+<p>Точный метод используется только для рёбер с признаком <code>SameParameter</code>. По умолчанию применяется вычисление в конечном числе точек.</p>
+<h3>IsExactMethod</h3>
+<pre><code>bool IsExactMethod()</code></pre>
+<p>Возвращает <code>true</code>, если выбран точный метод.</p>
+<h3>SetParallel</h3>
+<pre><code>void SetParallel(const bool theIsParallel)</code></pre>
+<p>Устанавливает флаг параллельного выполнения.</p>
+<h3>IsParallel</h3>
+<pre><code>bool IsParallel()</code></pre>
+<p>Возвращает <code>true</code>, если установлен флаг параллельного выполнения.</p>
+
+<h2 id="result">5. Результат проверки и исходный файл</h2>
+<h3>Result</h3>
+<pre><code>const occ::handle&lt;BRepCheck_Result&gt;&amp;
+Result(const TopoDS_Shape&amp; theSubS) const</code></pre>
+<p>В исходном справочнике для этого метода приведена сигнатура без отдельного текстового описания.</p>
+<p>Документация класса автоматически сформирована из файла <code>BRepCheck_Analyzer.hxx</code>. Исходный код Open CASCADE и условия его распространения доступны в <a href="https://github.com/Open-Cascade-SAS/OCCT" target="_blank" rel="noopener noreferrer">официальном репозитории OCCT</a>. Для оригинала действуют LGPL версии 2.1 с дополнительным исключением OCCT; перевод сохраняет ссылку на эти условия и обозначен как изменённая русскоязычная версия документации.</p>
+
+            </article>
+        </main>
+    </div>
+    <nav id="menub" aria-label="Навигация внизу страницы">
+        <a class="mitemb" href="../../index.htm">О себе</a>
+        <a class="mitemb" href="../../diss/index.htm">Реферат</a>
+        <a class="mitemb" href="../index.htm#translations">Мои переводы</a>
+        <a class="mitemb" href="../../ind/index.htm">Индивидуальный раздел</a>
+    </nav>
+</body>
+</html>
