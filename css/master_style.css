@@ -10,6 +10,16 @@
 /* @import "files/color_08_orange.css";  */
 
 
+.about-video {
+    display: block;
+    width: 100%;
+    max-width: 854px;
+    height: auto;
+    margin: 20px auto;
+    background: #000000;
+    border-radius: 10px;
+}
+
 .content-container {
     display: flex;
     align-items: center;
