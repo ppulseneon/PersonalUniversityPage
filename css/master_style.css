@@ -244,7 +244,9 @@ table#resume tr.even:hover {
     background: var(--surface-muted);
 }
 
-table#resume td.experience-links a {
+table#resume td.experience-links a,
+table#resume td.achievement-links a,
+table#resume td.contact-links a {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
