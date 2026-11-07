@@ -244,6 +244,11 @@ table#resume tr.even:hover {
     background: var(--surface-muted);
 }
 
+table#resume td.experience-links a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 table#resume td a:hover {
     color: var(--accent);
     text-decoration-color: var(--accent);
